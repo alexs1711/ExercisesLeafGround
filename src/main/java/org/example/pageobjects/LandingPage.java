@@ -17,38 +17,34 @@ public class LandingPage extends AbstractComponent{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-		
-	//WebElement userEmails = driver.findElement(By.id("userEmail"));
-	//PageFactory
 
+	@FindBy(css = "#email")
+	WebElement emailInput;
 
-	@FindBy(css = ".pi.pi-globe.layout-menuitem-icon")
-	WebElement globeIconBt;
+	@FindBy(css = "#message")
+	WebElement messageInput;
 
-	@FindBy(css = ".pi.pi-fw.pi-window-maximize.layout-menuitem-icon")
-	WebElement windowTestBt;
+	@FindBy(css = "button[id='j_idt130'] span[class='ui-button-text ui-c']")
+	WebElement sendEmailMessageButton;
 
-	@FindBy(css = ".pi.pi-fw.pi-stop.layout-menuitem-icon")
-	WebElement frameTestBt;
-
-	@FindBy(css = " .pi.pi-fw.pi-clone.layout-menuitem-icon")
-	WebElement alertTestBt;
-
-	@FindBy(css = " a[href='/drag.xhtml'] .pi.pi-fw.pi-calendar.layout-menuitem-icon ")
-	WebElement dragTestBt;
-
-	public testWindow openTestWindow()
-	{
-		globeIconBt.click();
-		windowTestBt.click();
-		testWindow testW = new testWindow(driver);
-		return testW;
-	}
-	public void goTo()
+	public void goToDashboard()
 	{
 		driver.get("https://www.leafground.com/dashboard.xhtml");
 	}
-	
+
+	public void setEmail(String email){
+		emailInput.click();
+		emailInput.sendKeys(email);
+	}
+	public void setMessage(String message){
+		messageInput.click();
+		messageInput.sendKeys(message);
+	}
+	public void sendEmailMessage (String email,String message){
+		setEmail(email);
+		setMessage(message);
+		sendEmailMessageButton.click();
+	}
 	
 	
 	

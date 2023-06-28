@@ -1,0 +1,57 @@
+https://www.leafground.com/window.xhtml
+1)            Click and Confirm new Window Opens
+Open child window , do some operations in child window, close child window and make sure that control is in parent window.
+2)            Close all windows except Primary
+3)            Find the number of opened tabs
+4)            Wait for 2 new tabs to open
+
+https://www.leafground.com/frame.xhtml
+1)            Click Me (Inside frame)
+2)            How many frames in this page?
+3)            Click Me (Inside Nested frame)
+
+https://www.leafground.com/drag.xhtml
+1)            Drag and drop
+
+https://www.leafground.com/alert.xhtml
+1)            Alert (Simple Dialog)
+2)            Alert (Confirm Dialog)
+3)            Sweet Alert (Simple Dialog)
+4)            Sweet Modal DialogAlert (Prompt Dialog)
+5)            Sweet Alert (Confirmation)
+6)            Minimize and Maximize
+
+https://www.leafground.com/button.xhtml
+1)            Click and Confirm title.
+2)            Confirm if the button is disabled.
+3)            Find the position of the Submit button
+4)            Find the Save button color
+5)            Find the height and width of this button
+6)            Mouse over and confirm the color changed
+7)            Click Image Button and Click on any hidden button
+8)            How many rounded buttons are there?
+
+https://www.leafground.com/file.xhtml
+1)            Basic Upload
+2)            Advanced Upload - Only Pictures
+3)            Basic Download
+
+https://www.leafground.com/radio.xhtml
+1)            Your most favorite browser
+2)            UnSelectable
+3)            Find the default select radio button
+4)            Select the age group (only if not selected)
+
+https://www.leafground.com/link.xhtml
+1)            Take me to dashboard
+2)            Find my destination
+3)            Am I broken link?
+4)            Duplicate Link
+5)            Count Links
+6)            Count Layout Links
+
+https://www.leafground.com/waits.xhtml
+1)            Wait for Visibility (1 - 10 Sec)
+2)            Wait for Clickability
+3)            Wait for Invisibility (1 - 10 Sec)
+4)            Wait for Text Change (1 - 10 Sec)

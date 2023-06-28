@@ -1,19 +1,9 @@
 package org.example.pageobjects;
 
 import org.example.AbstractComponent.AbstractComponent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class testWindow extends AbstractComponent {
 
@@ -37,15 +27,30 @@ public class testWindow extends AbstractComponent {
 	@FindBy(css = "button[id='j_idt88:j_idt95'] span[class='ui-button-text ui-c']")
 	WebElement openWindowDelayBt;
 
-	public LandingPage openTestClickAndConfirmWindow()
+	public LandingPage openLandingTestClickAndConfirmWindow()
 	{
 		newWindowOpensBt.click();
+		//windowHandle();
 		LandingPage testClickConfirmW = new LandingPage(driver);
 		return testClickConfirmW;
 	}
+	public void openCloseAllWindowsExceptPrimary()
+	{
+		closeAllWindowsExceptPrimBt.click();
+		windowHandleCloseAllMinusMain();
+	}
 
+	public int openCloseAllWindowsExceptPrimaryAndFindNumber()
+	{
+		openMultipleWindowsBt.click();
+		int count = windowHandleCloseAllMinusMain();
+		return count;
+	}
 
-
-
+	public void waitForNewTabsToOpen(int numberTabs){
+		openWindowDelayBt.click();
+		waitForNumberOfWindowsToBe(numberTabs);
+		System.out.println("Successfully waited for "+numberTabs+ " new tabs");
+	}
 
 }

@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
@@ -96,19 +97,28 @@ public class BaseTest {
 
     }
 
-    @BeforeTest(alwaysRun=true) //will run always even with groups property set in testng.xml  //check beforeMethod vs beforeTest
+    /*@BeforeTest(alwaysRun=true) //will run always even with groups property set in testng.xml  //check beforeMethod vs beforeTest
     public LandingPage launchApplication() throws IOException, InterruptedException {
-
         driver = initializeDriver();
         landingPage = new LandingPage(driver);
         landingPage.goTo();
         return landingPage;
+    }*/
+
+    @BeforeTest(alwaysRun=true)
+    public void launchApp() throws IOException {
+        driver = initializeDriver();
     }
-
-    @AfterMethod(alwaysRun=true)
-
+    /*
+    @AfterTest(alwaysRun=true)
     public void tearDown()
     {
         driver.close();
-    }
+    }*/
+    /*
+    @AfterTest(alwaysRun=true)
+    public void tearDownAll()
+    {
+        driver.quit();
+    }*/
 }
